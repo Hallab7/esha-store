@@ -17,7 +17,7 @@ export default function ProductList({ products, loading }) {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 cursor-pointer gap-4 my-6">
+    <div className="pt-32 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 cursor-pointer gap-4 my-6">
       {products.length > 0 ? (
         products.map((product) => {
           const isExpanded = expanded[product._id];
@@ -25,7 +25,7 @@ export default function ProductList({ products, loading }) {
           const shouldShowSeeMore = product.description.length > 80;
 
           return (
-            <div key={product._id} className="hover:border rounded-lg p-4 shadow-lg">
+            <div key={product._id} className="box p  rounded-lg p-4 shadow-lg" >
               <Image src={product.image} alt={product.name} width={300} height={200} className="h-[250px] w-full rounded-lg" />
               <h2 className="text-xl text-black font-semibold mt-2">{product.name}</h2>
               <p className="text-black">
@@ -39,10 +39,12 @@ export default function ProductList({ products, loading }) {
                   {isExpanded ? "See Less" : "See More"}
                 </button>
               )}
-              <p className="text-lg text-black font-bold mt-2">₦{product.price}</p>
+              <p className="text-lg text-black font-bold mt-2 gap-2 flex items-center">
+              <span className="line-through text-black text-sm opacity-70">₦{Number(140/100 * product.price).toLocaleString()} </span> <span> ₦{Number(product.price).toLocaleString()} </span>
+              </p>
               <Link
                 href={`https://wa.me/2349055625989?text=I%20want%20to%20order%20${encodeURIComponent(product.name)}`}
-                className="block border-2 text-black hover:bg-black hover:text-white text-center mt-4 py-2 rounded-lg w-1/3  transition duration-300"
+                className="box block text-black hover:bg-black hover:text-white text-center mt-4 py-2 rounded-lg w-1/3  transition duration-300"
                 target="_blank"
               >
                 Order Now

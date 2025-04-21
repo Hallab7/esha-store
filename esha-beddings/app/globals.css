@@ -25,4 +25,42 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.box {
+  position: relative;
+ 
+  align-items: center;
+  z-index: 1;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    black,
+    white,
+    black,
+    white,
+    black,
+    white,
+    black
+  );
+  background-size: 400%;
+  z-index: -1;
+  border-radius: 4px;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: borderFlow 4s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
 

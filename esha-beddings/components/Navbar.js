@@ -21,8 +21,8 @@ export default function Navbar({ selectedCategory, setSelectedCategory }) {
       : "hover:text-gray-300";
 
   return (
-    <nav className="flex justify-between items-center py-4 px-6 text-black bg-white">
-      {/* Logo wrapped in Link to make it clickable and navigate to home */}
+    <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center  px-6 text-black bg-white">
+      {/* Logo wrapped in Link to make it clickable and navigate to home */ }
       <div className="flex items-center">
         <Link href="/" onClick={handleHomeClick}>
           <Image src={logo} alt="Esha's Beddings Logo" width={160} height={100} />
@@ -66,7 +66,7 @@ export default function Navbar({ selectedCategory, setSelectedCategory }) {
                   handleHomeClick();
                   setMenuOpen(false);
                 }}
-                className={`block py-2 px-4 ${selectedCategory === "all" ? "bg-black text-white" : "hover:bg-black hover:text-white"}`}
+                className={`block py-2 px-4 mx-4 ${selectedCategory === "all" ? "bg-black text-white" : "hover:bg-black hover:text-white"}`}
               >
                 Home
               </button>
@@ -78,7 +78,7 @@ export default function Navbar({ selectedCategory, setSelectedCategory }) {
                     setSelectedCategory(category);
                     setMenuOpen(false);
                   }}
-                  className={`block py-2 px-4 ${
+                  className={`block py-2 px-4 mx-4 ${
                     selectedCategory === category ? "bg-black text-white" : "hover:bg-black hover:text-white"
                   }`}
                 >

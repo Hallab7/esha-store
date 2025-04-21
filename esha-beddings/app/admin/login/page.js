@@ -40,28 +40,32 @@ export default function Login() {
       {error && <p className="text-center text-red-500">{error}</p>}
 
       {/* Login Form */}
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mb-6">
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg mb-6">
+        <h1 className="py-2 font-bold">Admin Username:</h1>
         <input
           type="text"
           name="adminUsername"
           placeholder="Admin Username"
-          className="w-full border p-2 mb-4"
+          className="w-full border p-2 mb-4 rounded-lg"
           value={formData.adminUsername}
           onChange={handleChange}
           required
         />
+        <h1 className="py-2 font-bold">Admin Password:</h1>
         <input
           type="password"
           name="adminPassword"
           placeholder="Admin Password"
-          className="w-full border p-2 mb-4"
+          className="w-full border p-2 mb-4 rounded-lg"
           value={formData.adminPassword}
           onChange={handleChange}
           required
         />
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg">
+        <div className="flex justify-center items-center mb-4">
+        <button type="submit" className="w-auto  bg-black text-white py-2 px-6 rounded-lg">
           Login
         </button>
+        </div>
       </form>
     </div>
   );
