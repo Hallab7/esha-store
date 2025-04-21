@@ -18,6 +18,7 @@ export default function Login() {
   // Handle form input
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setError("");
   };
 
   // Handle login form submission

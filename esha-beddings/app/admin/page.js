@@ -107,7 +107,7 @@ export default function Admin() {
   if (authenticating && loading) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-100">
-        <p className="text-xl text-[#DBC078]">Authenticating...</p>
+        <p className="text-xl text-black">Authenticating...</p>
       </div>
     );
   }
